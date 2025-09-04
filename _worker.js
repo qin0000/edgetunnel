@@ -1,8 +1,8 @@
 
 import { connect } from 'cloudflare:sockets';
 
-let userID = '';
-let proxyIP = '';
+let userID = 'qinya';
+let proxyIP = '154.21.93.60:14691';
 let DNS64Server = '';
 //let sub = '';
 let subConverter = atob('U1VCQVBJLkNNTGl1c3Nzcy5uZXQ=');
@@ -30,7 +30,7 @@ let addressesnotlsapi = [];
 let addressescsv = [];
 let DLS = 8;
 let remarkIndex = 1;//CSV备注所在列偏移量
-let FileName = atob('ZWRnZXR1bm5lbA==');
+let FileName = atob('cWlueWE=');
 let BotToken;
 let ChatID;
 let proxyhosts = [];
@@ -65,7 +65,7 @@ export default {
             } else 动态UUID = userID;
 
             if (!userID) {
-                return new Response('请设置你的UUID变量，或尝试重试部署，检查变量是否生效？', {
+                return new Response('有错误，未生效！请重试！！！', {
                     status: 404,
                     headers: {
                         "Content-Type": "text/plain;charset=utf-8",
@@ -214,7 +214,7 @@ export default {
                 } else {
                     if (env.URL302) return Response.redirect(env.URL302, 302);
                     else if (env.URL) return await 代理URL(env.URL, url);
-                    else return new Response('不用怀疑！你UUID就是错的！！！', { status: 404 });
+                    else return new Response('有错误！！！', { status: 404 });
                 }
             } else {
                 socks5Address = url.searchParams.get('socks5') || socks5Address;
@@ -4568,3 +4568,4 @@ async function nginx() {
 	`
     return text;
 }
+
